@@ -1,4 +1,4 @@
-#r "../bin/Liquid1.dll"
+#r "bin/Liquid1.dll"
 #r "packages/Suave/lib/net40/Suave.dll"
 
 open Suave
