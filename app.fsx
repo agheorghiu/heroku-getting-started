@@ -1,6 +1,4 @@
 #r "bin/Liquid1.dll"
-#load "packages/FsLab/Themes/DefaultWhite.fsx"
-#load "packages/FsLab/FsLab.fsx"
 #r "packages/Suave/lib/net40/Suave.dll"
 
 open Suave
@@ -10,12 +8,6 @@ open Suave.Successful
 
 open System
 open System.Net
-
-open Deedle
-open FSharp.Data
-open XPlot.GoogleCharts
-open XPlot.Plotly
-open XPlot.GoogleCharts.Deedle
 
 open Microsoft.Research.Liquid
 open Util
