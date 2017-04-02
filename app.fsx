@@ -1,9 +1,4 @@
-#if INTERACTIVE
-#r @"bin/Liquid1.dll"
-#else
-namespace Microsoft.Research.Liquid
-#endif
-
+#r "bin/Liquid1.dll"
 #load "packages/FsLab/Themes/DefaultWhite.fsx"
 #load "packages/FsLab/FsLab.fsx"
 #r "packages/Suave/lib/net40/Suave.dll"
@@ -40,7 +35,6 @@ module Script =
         M [q]
 
 
-    [<LQD>]
     let test(pad:int, n:int)    =
         let mutable out1 = 0
         let mutable out2 = 0
