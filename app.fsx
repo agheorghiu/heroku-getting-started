@@ -105,5 +105,14 @@ let config =
         bindings=[ (if port = null then HttpBinding.mk HTTP ip127 (uint16 8080)
                     else HttpBinding.mk HTTP ipZero (uint16 port)) ] }
 
-let app = OK html
+
+let app = 
+  choose
+    [ GET >=> choose
+                [ path "/" >=> OK html ]
+      POST >=> choose
+                [ path "/hello" >=> OK "Hello POST"
+                  path "/goodbye" >=> OK "Good bye POST" ] ]
+
+//let app = OK html
 startWebServer config app
