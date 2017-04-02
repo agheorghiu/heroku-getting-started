@@ -105,22 +105,5 @@ let config =
         bindings=[ (if port = null then HttpBinding.mk HTTP ip127 (uint16 8080)
                     else HttpBinding.mk HTTP ipZero (uint16 port)) ] }
 
-let fib n =
-  let rec loop a b i = async {
-    if i > n then
-      return b
-    else
-      return! loop b (a + b) (i + 1I)
-  }
-  async {
-    if n = 1I || n = 2I then
-      return 1I
-    else
-      return! loop 1I 1I 3I
-  }
-
-let app =
-  pathScan "/%d" (fun (n : int) -> fun x -> async{ let! r = fib (bigint n) in return! OK (r.ToString()) x })
-
-//let app = OK html
+let app = OK html
 startWebServer config app
