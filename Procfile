@@ -1,1 +1,1 @@
-web: fsharpi-heroku app.fsx
+web: echo -ne 'Y\n' | fsharpi-heroku app.fsx ; fsharpi-heroku app.fsx
